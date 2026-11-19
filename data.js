@@ -25,7 +25,7 @@ window.PORTFOLIO = {
   ],
 
   showAllRepos: true,
-  hideRepos: [],
+  hideRepos: ["AksharAeinampudi.github.io"],
 
   /* demo.type: "video" | "gif" | "image" | "youtube" | "iframe"
      demo.poster: thumbnail shown on the card.
