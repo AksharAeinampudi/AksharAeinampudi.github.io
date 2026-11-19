@@ -56,8 +56,8 @@ window.PORTFOLIO = {
       tags: ["Python", "FastAPI", "PostgreSQL", "React", "BigQuery", "Data"],
       repo: "https://github.com/AksharAeinampudi/gh-ecosystem-analyzer",
       live: "https://gh-ecosystem-analyzer.onrender.com",
-      demo: { type: "image", src: "assets/demos/gh-ecosystem-analyzer.png" },
-      note: "Screenshot of the live dashboard. The live site runs on a free plan, so the first load can take up to a minute.",
+      demo: { type: "video", src: "assets/demos/gh-ecosystem-analyzer.mp4", poster: "assets/demos/gh-ecosystem-analyzer.jpg" },
+      note: "27-second recorded demo. To try it yourself, open the live site (free hosting, so the first load can take up to a minute).",
       stats: ["~96 GB analyzed", "4.86M rows", "Rollups 78 s → 8 s"],
       highlights: [
         "Queried ~96 GB of GH Archive data in BigQuery: 9 months of public GitHub activity turned into 4.86M daily rows for 25,000 repos, enriched via GraphQL",
@@ -73,8 +73,8 @@ window.PORTFOLIO = {
       tags: ["Python", "Flask", "PostgreSQL", "Web scraping"],
       repo: "https://github.com/AksharAeinampudi/internship-tracker",
       live: "https://internship-tracker-g9ua.onrender.com",
-      demo: { type: "iframe", src: "https://internship-tracker-g9ua.onrender.com" },
-      note: "Live app. It runs on a free plan, so the first load can take up to a minute.",
+      demo: { type: "video", src: "assets/demos/internship-tracker.mp4", poster: "assets/demos/internship-tracker.jpg" },
+      note: "22-second recorded demo. To try it yourself, open the live site (free hosting, so the first load can take up to a minute).",
       stats: ["1,100+ postings / run", "48 tests", "Auto-scrapes every 6 h"],
       highlights: [
         "Scrapes 1,100+ postings per run from 4 companies' Greenhouse and Lever APIs, normalized into one schema with regex word-boundary title filtering",
