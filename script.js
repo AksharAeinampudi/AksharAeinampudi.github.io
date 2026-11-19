@@ -14,6 +14,27 @@
   const btn = (href, label, icon, primary) =>
     `<a class="btn${primary ? " primary" : ""}" href="${esc(href)}" ${href.startsWith("mailto:") ? "" : 'target="_blank" rel="noopener"'}>${icons[icon] || ""}${esc(label)}</a>`;
 
+  // ---------- Analytics (GoatCounter: no cookies, no personal data) ----------
+  const track = (name) => { try { window.goatcounter?.count({ path: name, title: name, event: true }); } catch (e) {} };
+  if (P.goatcounter) {
+    const gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "https://gc.zgo.at/count.js";
+    gc.dataset.goatcounter = `https://${P.goatcounter}.goatcounter.com/count`;
+    document.head.appendChild(gc);
+    // Count clicks on résumé, profile, live-site and code links as events.
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href]");
+      if (!a) return;
+      const href = a.getAttribute("href");
+      if (href.startsWith("#")) return;
+      const where = a.closest("#hero-cta") ? "hero" : a.closest("#contact-cta") ? "contact" : a.closest("#modal-cta") ? "popup" : a.closest(".card-links") ? "card" : a.closest(".repo") ? "repo-list" : "page";
+      const project = a.closest(".card")?.querySelector("h3")?.textContent || (where === "popup" ? $("#modal-title").textContent : "");
+      const label = a.textContent.replace(/[↗→]/g, "").trim();
+      track(`click: ${label}${project ? " · " + project : ""} (${where})`);
+    });
+  }
+
   // ---------- Header / hero ----------
   document.title = `${P.name} · ${P.role}`;
   $("#logo").innerHTML = P.shortName && P.name.startsWith(P.shortName) ? `${esc(P.shortName)}<span class="logo-rest">${esc(P.name.slice(P.shortName.length))}</span>` : esc(P.name);
@@ -123,6 +144,7 @@
     const m = e.target.closest(".card-media");
     if (!m) return;
     const p = P.projects[+m.dataset.i];
+    track(`demo: ${p.title}`);
     $("#modal-media").innerHTML = media(p);
     $("#modal-media").classList.toggle("scroll", !!p.demo && ["image", "gif"].includes(p.demo.type));
     $("#modal-note").textContent = p.note || "";

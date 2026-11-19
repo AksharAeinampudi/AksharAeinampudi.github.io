@@ -13,6 +13,9 @@ window.PORTFOLIO = {
 
   githubUsername: "AksharAeinampudi",
 
+  // GoatCounter site code (https://CODE.goatcounter.com). Leave "" to turn analytics off.
+  goatcounter: "aksharaeinampudi",
+
   // Empty values hide that button. Add them when you're ready.
   links: {
     email: "aeinampudiakshar@gmail.com",
