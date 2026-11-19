@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <script>
     try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -26,6 +26,7 @@
       <a href="#top" class="logo" id="logo"></a>
       <nav class="nav-links">
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#repos" id="nav-repos">Repos</a>
         <a href="#contact">Contact</a>
         <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
@@ -37,6 +38,7 @@
 
   <main id="top">
     <section class="hero wrap">
+      <p class="status" id="hero-status" hidden></p>
       <p class="eyebrow mono" id="hero-role"></p>
       <h1 id="hero-name"></h1>
       <p class="lead" id="hero-tagline"></p>
@@ -50,6 +52,14 @@
         <div class="filters" id="filters" role="tablist" aria-label="Filter projects by tag"></div>
       </div>
       <div class="grid" id="project-grid"></div>
+    </section>
+
+    <section id="experience" class="wrap section">
+      <div class="section-head"><h2>Experience &amp; education</h2></div>
+      <div class="timeline">
+        <div><h3 class="col-label mono">Experience</h3><div id="experience-list"></div></div>
+        <div><h3 class="col-label mono">Education</h3><div id="education-list"></div></div>
+      </div>
     </section>
 
     <section id="repos" class="wrap section">
@@ -86,7 +96,7 @@
     </div>
   </dialog>
 
-  <script src="data.js?v=4"></script>
-  <script src="script.js?v=4"></script>
+  <script src="data.js?v=5"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

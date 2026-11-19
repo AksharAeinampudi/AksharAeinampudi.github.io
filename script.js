@@ -20,6 +20,22 @@
   $("#hero-role").textContent = `> ${P.role}${P.location ? " · " + P.location : ""}`;
   $("#hero-name").textContent = `Hi, I'm ${P.shortName || P.name}.`;
   $("#hero-tagline").textContent = P.tagline;
+  if (P.seeking) { $("#hero-status").textContent = P.seeking; $("#hero-status").hidden = false; }
+
+  // ---------- Experience & education ----------
+  const entries = (list = []) => list.map((e) => `
+    <article class="entry">
+      <div class="entry-head"><strong>${esc(e.org)}</strong><span class="mono muted">${esc(e.dates)}</span></div>
+      <div class="entry-role">${esc(e.role)}</div>
+      <ul>${(e.points || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+    </article>`).join("");
+  if (P.experience?.length || P.education?.length) {
+    $("#experience-list").innerHTML = entries(P.experience);
+    $("#education-list").innerHTML = entries(P.education);
+  } else {
+    $("#experience").remove();
+    document.querySelector('.nav-links a[href="#experience"]')?.remove();
+  }
   const ctas = [
     btn("#projects", "See projects", "", true).replace(/target="_blank" rel="noopener"/, ""),
     P.links.resume && btn(P.links.resume, "Résumé", "file"),
@@ -67,6 +83,7 @@
         <div class="card-body">
           <h3>${esc(p.title)}</h3>
           <p>${esc(p.summary)}</p>
+          ${p.stats?.length ? `<ul class="stats">${p.stats.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
           <div class="tags">${p.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
           <div class="card-links">
             ${p.live ? `<a href="${esc(p.live)}" target="_blank" rel="noopener">Live site ↗</a>` : ""}
