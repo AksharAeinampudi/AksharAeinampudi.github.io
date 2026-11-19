@@ -16,7 +16,7 @@
 
   // ---------- Header / hero ----------
   document.title = `${P.name} · ${P.role}`;
-  $("#logo").textContent = P.name;
+  $("#logo").innerHTML = P.shortName && P.name.startsWith(P.shortName) ? `${esc(P.shortName)}<span class="logo-rest">${esc(P.name.slice(P.shortName.length))}</span>` : esc(P.name);
   $("#hero-role").textContent = `> ${P.role}${P.location ? " · " + P.location : ""}`;
   $("#hero-name").textContent = `Hi, I'm ${P.shortName || P.name}.`;
   $("#hero-tagline").textContent = P.tagline;

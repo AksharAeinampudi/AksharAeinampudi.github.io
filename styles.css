@@ -124,3 +124,6 @@ dialog::backdrop { background: rgba(0,0,0,.65); backdrop-filter: blur(4px); }
 .modal-body .tags { margin-bottom: 18px; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+.logo { white-space: nowrap; }
+@media (max-width: 480px) { .logo-rest { display: none; } .nav-links a { padding: 6px 7px; } }
