@@ -5,18 +5,18 @@
 window.PORTFOLIO = {
   name: "Akshar Aeinampudi",
   shortName: "Akshar",
-  role: "Software Developer",
+  role: "Electrical & Computer Engineering @ Rutgers",
   tagline:
     "I build full-stack apps, data pipelines and games, and I ship them live. Click any project to try a quick demo.",
-  location: "", // e.g. "Dallas, TX"
+  location: "New Brunswick, NJ",
 
   githubUsername: "AksharAeinampudi",
 
   // Empty values hide that button. Add them when you're ready.
   links: {
-    email: "", // e.g. "you@example.com"
-    linkedin: "", // e.g. "https://www.linkedin.com/in/your-profile"
-    resume: "", // e.g. "assets/resume.pdf" (put the PDF in /assets)
+    email: "aeinampudiakshar@gmail.com",
+    linkedin: "https://www.linkedin.com/in/akshar-aeinampudi-0824b6269/",
+    resume: "assets/Akshar_Aeinampudi_Resume.pdf",
   },
 
   skills: [
